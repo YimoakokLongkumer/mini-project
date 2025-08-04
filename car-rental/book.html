@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Car | Car Rental</title>
+  <link rel="stylesheet" href="public/style.css" />
+</head>
+
+<script src="public/script.js"></script>
+
+<body>
+
+  <header>
+    <h1>Car Rental Service</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="book.html">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+  <h2>Book a Car</h2>
+
+  <form action="/book" method="POST">
+    <label for="car">Select Car:</label>
+    <select id="car" name="car" required>
+      <option value="">--Choose a car--</option>
+      <option value="honda-civic">Honda Civic</option>
+      <option value="hyundai-creta">Hyundai Creta</option>
+      <option value="maruti-swift">Maruti Swift</option>
+    </select>
+
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date" name="start_date" required />
+
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date" name="end_date" required />
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
