@@ -1,0 +1,17 @@
+{
+  "name": "car-rental-project-sql",
+  "version": "1.0.0",
+  "description": "A simple car rental website using SQLite.",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
