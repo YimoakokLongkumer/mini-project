@@ -10,53 +10,31 @@
 
 <body>
 
-<header>
-  <h1>Car Rental Service</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="book.html">Book Now</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <h1>Car Rental Service</h1>
+    <nav>
+      <!-- Navigation will be dynamically updated by script.js -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <h2>Available Cars</h2>
+  <main>
+    <h2>Available Cars</h2>
 
-  <section class="car-listings">
+    <!-- This section will be filled with car data from the database -->
+    <section class="car-listings" id="car-listings">
+      <p>Loading cars...</p>
+    </section>
 
-    <div class="car-card">
-      <img src="https://placehold.co/600x400/EEE/31343C?text=Honda+Civic" alt="Car 1" />
-      <h3>Honda Civic</h3>
-      <p>Price per day: ₹3000</p>
-      <!-- This link now passes the car's name to the booking page -->
-      <a href="book.html?car=honda-civic"><button>Book Now</button></a>
-    </div>
+  </main>
 
-    <div class="car-card">
-      <img src="https://placehold.co/600x400/EEE/31343C?text=Hyundai+Creta" alt="Car 2" />
-      <h3>Hyundai Creta</h3>
-      <p>Price per day: ₹4500</p>
-      <!-- This link now passes the car's name to the booking page -->
-      <a href="book.html?car=hyundai-creta"><button>Book Now</button></a>
-    </div>
-
-    <div class="car-card">
-      <img src="https://placehold.co/600x400/EEE/31343C?text=Maruti+Swift" alt="Car 3" />
-      <h3>Maruti Swift</h3>
-      <p>Price per day: ₹2800</p>
-      <!-- This link now passes the car's name to the booking page -->
-      <a href="book.html?car=maruti-swift"><button>Book Now</button></a>
-    </div>
-
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Car Rental Service. All rights reserved.</p>
+  </footer>
 
   <script src="public/script.js"></script>
 

@@ -5,22 +5,28 @@ const path = require('path');
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: path.join(__dirname, '..', 'database.sqlite'),
-  logging: false
+  logging: false // Set to true to see SQL queries in the console
 });
 
+// Create a db object to hold our models
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
 // Import models
-const User = require('./user')(sequelize, Sequelize.DataTypes);
-const Booking = require('./booking')(sequelize, Sequelize.DataTypes);
+db.User = require('./user')(sequelize, Sequelize.DataTypes);
+db.Booking = require('./booking')(sequelize, Sequelize.DataTypes);
+db.Car = require('./car')(sequelize, Sequelize.DataTypes); // Import the new Car model
 
 // Define associations
 // A user can have many bookings
-User.hasMany(Booking);
-// A booking belongs to one user
-Booking.belongsTo(User);
+db.User.hasMany(db.Booking);
+db.Booking.belongsTo(db.User);
 
-// Export everything
-module.exports = {
-  sequelize,
-  User,
-  Booking
-};
+// A car can have many bookings
+db.Car.hasMany(db.Booking);
+db.Booking.belongsTo(db.Car);
+
+// Export the db object
+module.exports = db;

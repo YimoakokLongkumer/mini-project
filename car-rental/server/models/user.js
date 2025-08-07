@@ -1,5 +1,4 @@
-// This file should export a function that defines the model.
-// This function will be called automatically by 'models/index.js'.
+// This file defines the 'User' model.
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -18,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   });
+
+  // This function defines the model's relationships (associations)
+  User.associate = (models) => {
+    // A User can have many Bookings
+    User.hasMany(models.Booking);
+  };
 
   return User;
 };
