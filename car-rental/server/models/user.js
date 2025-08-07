@@ -1,31 +1,23 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const path = require('path');
+// This file should export a function that defines the model.
+// This function will be called automatically by 'models/index.js'.
 
-// Initialize Sequelize with SQLite
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: path.join(__dirname, '..', 'database.sqlite') // DB file will be in the 'server' folder
-});
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    // Model attributes are defined here
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  });
 
-// Define the User model
-const User = sequelize.define('User', {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
-});
-
-// Export the sequelize instance and the User model
-module.exports = {
-  sequelize,
-  User
+  return User;
 };
