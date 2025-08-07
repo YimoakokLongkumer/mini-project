@@ -27,3 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+  loginForm.addEventListener("submit", function (event) {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      event.preventDefault();
+    }
+  });
+}
